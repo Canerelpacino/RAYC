@@ -124,11 +124,11 @@ function App() {
       <img src="/config/images/bg.jpg" style={{ width: '100%', height: '100vh'}}></img>
 
         {/*Socials*/}
-        <a href="https://twitter.com/NotRenga " target="_blank">
-          <img src="/config/images/twitter.png" style={{ width: '7.1%', position: 'absolute', top: '0.6vh', left: '2vw', zIndex: '10' }} className="tw"></img>
+        <a href="https://twitter.com/RareApeYC " target="_blank">
+          <img src="/config/images/twitter.png" style={{ width: '5.5%', position: 'absolute', top: '1vh', left: '1vw', zIndex: '10' }} className="tw"></img>
         </a>
-        <a href="https://opensea.io/collection/not-renga" target="_blank">
-          <img src="/config/images/os.png" style={{ width: '7%', position: 'absolute', top: '1vh', right: '100vw', zIndex: '10' }} className="os"></img>
+        <a href="" target="_blank">
+          <img src="/config/images/os.png" style={{ width: '5%', position: 'absolute', top: '1.3vh', left: '-81vw', zIndex: '10' }} className="os"></img>
         </a>
         <div id="connectbtn" style={{}}
           onClick={(e) => {
@@ -174,7 +174,7 @@ function App() {
                   <s.SpacerMedium />
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     <btn id="roundbtn" className="round-button"
-                      style={{  fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer', textShadow: '5px 5px black'}}
+                      style={{  fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '7em', cursor: 'pointer', textShadow: '5px 5px black'}}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -186,7 +186,7 @@ function App() {
                     <s.SpacerMedium />
                     <s.TextDescription id="mint-amount"
                       style={{
-                        fontSize: '5em',
+                        fontSize: '7em',
                         textAlign: "center",
                         color: 'white',  fontFamily:  "'Dangrek', cursive", textShadow: '5px 5px black'
                       }}
@@ -195,7 +195,7 @@ function App() {
                     </s.TextDescription>
                     <s.SpacerMedium />
                     <btn className="round-button"
-                      style={{  fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer', textShadow: '5px 5px black'}}
+                      style={{  fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '7em', cursor: 'pointer', textShadow: '5px 5px black'}}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
