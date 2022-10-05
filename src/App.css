@@ -33,7 +33,7 @@
   position: absolute;
   display: block;
   color: white;
-  top: 25vh;
+  top: 27vh;
   left: 0;
   right: 0;
   width: 195px;
@@ -59,16 +59,17 @@
 #connectbtn2 {
   position: absolute;
   display: flex;
-  top: 30vh;
+  top: 40vh;
   left: 0;
   right: 0;
-  width: 280px;
+  width: 235px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Gemini', cursive;
+  font-family: 'Dangrek', cursive;
+  text-shadow: 5px 5px black;
   color: white;
   cursor: pointer;
-  font-size: 5em;
+  font-size: 4em;
 
 }
 
@@ -85,7 +86,8 @@
 }
 
 .mintbtn {
-  font-family: 'Gemini', cursive;
+  font-family: 'Dangrek', cursive;
+  text-shadow: 5px 5px black;
   color: white;
   cursor: pointer;
   font-size: 4em;

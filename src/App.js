@@ -298,7 +298,7 @@ function App() {
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
               <div
-                className="soldout" style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em' }}
+                className="soldout" style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em', textShadow: '5px 5px black' }}
               >
                 SOLD OUT!
               </div>
@@ -325,7 +325,7 @@ function App() {
                   <s.SpacerMedium />
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     <btn id="roundbtn" className="round-button"
-                      style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer' }}
+                      style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer', textShadow: '5px 5px black' }}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -339,14 +339,14 @@ function App() {
                       style={{
                         fontSize: '5em',
                         textAlign: "center",
-                        color: 'white', fontFamily: "'Dangrek', cursive",
+                        color: 'white', fontFamily: "'Dangrek', cursive", textShadow: '5px 5px black'
                       }}
                     >
                       {mintAmount}
                     </s.TextDescription>
                     <s.SpacerMedium />
                     <btn className="round-button"
-                      style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer' }}
+                      style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer', textShadow: '5px 5px black' }}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -400,7 +400,10 @@ justify-self: center;
 align-items: center; 
 height: 100vh;
 minWidth: 100%;
-background-color: black; 
+background-image: url("/config/images/bg.jpg");
+background-position: 50%; 
+background-repeat: no-repeat;
+background-size: cover; 
 text-align: center; 
 @media (orientation: landscape) {
   display: none;
