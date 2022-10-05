@@ -54,7 +54,7 @@ function App() {
         to: CONFIG.CONTRACT_ADDRESS,
         from: blockchain.account,
         value: totalCostWei,
-      }) 
+      })
       .once("error", (err) => {
         console.log(err);
         setFeedback("Sorry, something went wrong.");
@@ -115,20 +115,41 @@ function App() {
   const connected = () => {
     document.getElementById("connectbtn").style.display = "none";
     document.getElementById("connectbtn2").style.display = "none";
+    document.getElementById("text1").style.display = "none";
+    document.getElementById("text2").style.display = "none";
+    document.getElementById("text3").style.display = "none";
+  };
+
+  const changeText1 = () => {
+    document.getElementById("text1").style.display = "none";
+    document.getElementById("text2").style.display = "flex";
+    document.getElementById("text3").style.display = "none";
+  };
+
+  const changeText2 = () => {
+    document.getElementById("text1").style.display = "none";
+    document.getElementById("text2").style.display = "none";
+    document.getElementById("text3").style.display = "flex";
+  };
+
+  const changeText3 = () => {
+    document.getElementById("text1").style.display = "flex";
+    document.getElementById("text2").style.display = "none";
+    document.getElementById("text3").style.display = "none";
   };
 
   return (
     <div>
       <div className="home">
 
-      <img src="/config/images/bg.jpg" style={{ width: '100%', height: '100vh'}}></img>
+        <img src="/config/images/bg.jpg" style={{ width: '100%', height: '100vh' }}></img>
 
         {/*Socials*/}
         <a href="https://twitter.com/RareApeYC " target="_blank">
-          <img src="/config/images/twitter.png" style={{ width: '5.5%', position: 'absolute', top: '1vh', left: '1vw', zIndex: '10' }} className="tw"></img>
+          <img src="/config/images/twitter.png" style={{ width: '100px', position: 'absolute', top: '1vh', left: '1vw', zIndex: '10' }} className="tw"></img>
         </a>
         <a href="" target="_blank">
-          <img src="/config/images/os.png" style={{ width: '5%', position: 'absolute', top: '1.3vh', left: '-81vw', zIndex: '10' }} className="os"></img>
+          <img src="/config/images/os.png" style={{ width: '94px', position: 'absolute', top: '1.3vh', left: '-82vw', zIndex: '10' }} className="os"></img>
         </a>
         <div id="connectbtn" style={{}}
           onClick={(e) => {
@@ -138,7 +159,42 @@ function App() {
             connected();
           }}
         >
-        CONNECT
+          CONNECT
+        </div>
+        {/*<img src="/config/images/click.gif" style={{ position: 'absolute', width: '3%', top: '69vh', right: '35vw' }}></img>*/}
+
+        <div id="text1" onClick={changeText1} style={{ display: 'flex', flexDirection: 'row', width: '45%', position: 'absolute', height: '50%', top: '30vh', cursor: 'pointer' }}>
+          <div>
+            <h1 style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '4em', textShadow: '5px 5px black' }}>What is Rare Ape Yacht Club?</h1>
+            <p style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '2em', textShadow: '5px 5px black', padding: '2vh' }}>Let's put it this way. The greats paved the way for us. We are the new kids on the block... chain.
+              Not just a deriv but a hand picked community created from the ground up making way towards an expansive future in web 3. <br></br><br></br>
+              Beyond getting a high quality profile picture with full IP rights, owning a Rare Ape YC grants you access to a holder's
+              only Discord which is loaded with private tracking tools where we will align collaborations, alpha calls, and partnerships for our holders. </p>
+          </div>
+        </div>
+
+        <div id="text2" onClick={changeText2} style={{ display: 'none', flexDirection: 'row', width: '45%', position: 'absolute', height: '50%', top: '27vh', cursor: 'pointer' }}>
+          <div>
+            <h1 style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '4em', textShadow: '5px 5px black' }}>Roadmap</h1>
+            <p style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '2em', textShadow: '5px 5px black', padding: '2vh' }}>- 0% / Handpick members from the BAYC, MAYC, Rare Apepe, and other relative communities for our free WL mint <br></br><br></br>
+              - 25% / We'll get excited that people are getting the most amazing profile pictures to hit web3 since BAYC <br></br><br></br>
+              - 50% / What are those flesh eating zombies? <br></br><br></br>
+              - 75% / Ok time to call in the big guys <br></br><br></br>
+              - 100% / Allow holder's to access our invite only Discord </p>
+          </div>
+        </div>
+
+        <div id="text3" onClick={changeText3} style={{ display: 'none', flexDirection: 'row', width: '45%', position: 'absolute', height: '50%', top: '18vh', cursor: 'pointer' }}>
+          <div>
+            <h1 style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '4em', textShadow: '5px 5px black' }}>Future</h1>
+            <p style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '2em', textShadow: '5px 5px black', padding: '2vh' }}>The future of Rare Ape YC in the immediate sense will be to
+              find common goals within our community to achieve. Grant all holder's their intellectual property rights for unlimited personal and commercial use.
+              Setup ranking system within Discord based off holder participation. <br></br><br></br> Hire alpha callers, moderators, and collab managers. Get the best of the
+              best collaborations for our holders. Lastly, we feel that the NFT space is ever changing and moves quick. We love web3 and the NFT
+              community as a whole, we will stay adaptive with the latest trends in the space, technology, and crypto providing a true "alpha" ecosystem
+              as we build Rare Ape from an NFT project to a recognized brand. This is so much more than your typical "degen" play and the ride
+              is about to begin! Oh yea, and beware of those flesh eating zombies. </p>
+          </div>
         </div>
 
 
@@ -147,7 +203,7 @@ function App() {
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
               <div
-                className="soldout" style={{ fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '5em', textShadow: '5px 5px black'}}
+                className="soldout" style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em', textShadow: '5px 5px black' }}
               >
                 SOLD OUT!
               </div>
@@ -174,7 +230,7 @@ function App() {
                   <s.SpacerMedium />
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     <btn id="roundbtn" className="round-button"
-                      style={{  fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '7em', cursor: 'pointer', textShadow: '5px 5px black'}}
+                      style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '7em', cursor: 'pointer', textShadow: '5px 5px black' }}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -188,14 +244,14 @@ function App() {
                       style={{
                         fontSize: '7em',
                         textAlign: "center",
-                        color: 'white',  fontFamily:  "'Dangrek', cursive", textShadow: '5px 5px black'
+                        color: 'white', fontFamily: "'Dangrek', cursive", textShadow: '5px 5px black'
                       }}
                     >
                       {mintAmount}
                     </s.TextDescription>
                     <s.SpacerMedium />
                     <btn className="round-button"
-                      style={{  fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '7em', cursor: 'pointer', textShadow: '5px 5px black'}}
+                      style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '7em', cursor: 'pointer', textShadow: '5px 5px black' }}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -206,7 +262,7 @@ function App() {
                     </btn>
                   </s.Container>
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                    <img className="mintbtn" src="/config/images/mint.png" style={{width: '120%'}}
+                    <img className="mintbtn" src="/config/images/mint.png" style={{ width: '120%' }}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -220,12 +276,12 @@ function App() {
               )}
             </>
           )}
-          </div>
+        </div>
       </div>
 
 
       <Phone>
-      <div id="connectbtn2" style={{}}
+        <div id="connectbtn2" style={{}}
           onClick={(e) => {
             e.preventDefault();
             dispatch(connect());
@@ -233,7 +289,7 @@ function App() {
             connected();
           }}
         >
-        CONNECT
+          CONNECT
         </div>
 
 
@@ -242,7 +298,7 @@ function App() {
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
               <div
-                className="soldout" style={{ fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '5em'}}
+                className="soldout" style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em' }}
               >
                 SOLD OUT!
               </div>
@@ -269,7 +325,7 @@ function App() {
                   <s.SpacerMedium />
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     <btn id="roundbtn" className="round-button"
-                      style={{  fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer'}}
+                      style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer' }}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -283,14 +339,14 @@ function App() {
                       style={{
                         fontSize: '5em',
                         textAlign: "center",
-                        color: 'white',  fontFamily:  "'Dangrek', cursive",
+                        color: 'white', fontFamily: "'Dangrek', cursive",
                       }}
                     >
                       {mintAmount}
                     </s.TextDescription>
                     <s.SpacerMedium />
                     <btn className="round-button"
-                      style={{  fontFamily:  "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer'}}
+                      style={{ fontFamily: "'Dangrek', cursive", color: 'white', fontSize: '5em', cursor: 'pointer' }}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -316,7 +372,7 @@ function App() {
               )}
             </>
           )}
-          </div>
+        </div>
       </Phone>
     </div>
   );
