@@ -148,7 +148,7 @@ function App() {
         <a href="https://twitter.com/RareApeYC " target="_blank">
           <img src="/config/images/twitter.png" style={{ width: '100px', position: 'absolute', top: '1vh', left: '1vw', zIndex: '10' }} className="tw"></img>
         </a>
-        <a href="" target="_blank">
+        <a href="https://opensea.io/collection/rare-ape-yacht-club" target="_blank">
           <img src="/config/images/os.png" style={{ width: '94px', position: 'absolute', top: '1.3vh', left: '-82vw', zIndex: '10' }} className="os"></img>
         </a>
         <div id="connectbtn" style={{}}
